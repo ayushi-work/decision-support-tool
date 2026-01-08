@@ -383,14 +383,14 @@ export default function Home() {
           
           {/* Side-by-side comparison */}
           <div className="comparison-grid">
-            {results.results.ranked_options.map((option, index) => (
-              <div key={option.option_id} className="comparison-card">
+            {results.results.rankedOptions.map((option, index) => (
+              <div key={option.optionId} className="comparison-card">
                 {/* Header with rank and score */}
                 <div className="comparison-header">
                   <div className="rank-badge">#{option.rank}</div>
                   <h3 className="option-name">{option.name}</h3>
                   <div className="total-score">
-                    <div className="score-number">{option.total_score}</div>
+                    <div className="score-number">{option.totalScore}</div>
                     <div className="score-label">/ 100</div>
                   </div>
                 </div>
@@ -398,7 +398,7 @@ export default function Home() {
                 {/* Criteria scores as progress bars */}
                 <div className="criteria-section">
                   <h4>Criteria Scores</h4>
-                  {Object.entries(option.criteria_scores).map(([criteria, score]) => (
+                  {Object.entries(option.criteriaScores).map(([criteria, score]) => (
                     <div key={criteria} className="criteria-bar">
                       <div className="criteria-label">
                         <span className="criteria-name">{criteria}</span>
@@ -410,7 +410,7 @@ export default function Home() {
                           style={{ width: `${score.score}%` }}
                         ></div>
                       </div>
-                      <div className="raw-value">Raw: {score.raw_value}</div>
+                      <div className="raw-value">Raw: {score.rawValue}</div>
                     </div>
                   ))}
                 </div>
@@ -434,33 +434,33 @@ export default function Home() {
                 <div className="tradeoffs-section">
                   <h4>Trade-offs Summary</h4>
                   
-                  {option.trade_offs.strengths.length > 0 && (
+                  {option.tradeOffs.strengths.length > 0 && (
                     <div className="strengths-list">
                       <h5>Strengths</h5>
                       <ul>
-                        {option.trade_offs.strengths.map((strength, idx) => (
+                        {option.tradeOffs.strengths.map((strength, idx) => (
                           <li key={idx}>{strength}</li>
                         ))}
                       </ul>
                     </div>
                   )}
 
-                  {option.trade_offs.weaknesses.length > 0 && (
+                  {option.tradeOffs.weaknesses.length > 0 && (
                     <div className="weaknesses-list">
                       <h5>Weaknesses</h5>
                       <ul>
-                        {option.trade_offs.weaknesses.map((weakness, idx) => (
+                        {option.tradeOffs.weaknesses.map((weakness, idx) => (
                           <li key={idx}>{weakness}</li>
                         ))}
                       </ul>
                     </div>
                   )}
 
-                  {option.trade_offs.key_differentiators.length > 0 && (
+                  {option.tradeOffs.keyDifferentiators.length > 0 && (
                     <div className="differentiators-list">
                       <h5>Key Differentiators</h5>
                       <ul>
-                        {option.trade_offs.key_differentiators.map((diff, idx) => (
+                        {option.tradeOffs.keyDifferentiators.map((diff, idx) => (
                           <li key={idx}>{diff}</li>
                         ))}
                       </ul>
@@ -469,11 +469,11 @@ export default function Home() {
                 </div>
 
                 {/* Constraint compliance */}
-                {option.constraint_compliance && option.constraint_compliance.constraint_reasons && (
+                {option.constraintCompliance && option.constraintCompliance.constraintReasons && (
                   <div className="constraints-section">
                     <h4>Constraint Compliance</h4>
                     <ul className="constraints-list">
-                      {option.constraint_compliance.constraint_reasons.map((constraint, idx) => (
+                      {option.constraintCompliance.constraintReasons.map((constraint, idx) => (
                         <li key={idx} className={`constraint-item ${constraint.status}`}>
                           <span className="constraint-icon">
                             {constraint.status === 'passed' ? '✓' : '✗'}
@@ -494,15 +494,15 @@ export default function Home() {
               <h3>Decision Summary</h3>
               <div className="insight-grid">
                 <div className="insight-item">
-                  <strong>Options Meeting Constraints:</strong> {results.results.summary.options_meeting_constraints} of {results.results.summary.total_options_evaluated}
+                  <strong>Options Meeting Constraints:</strong> {results.results.summary.optionsMeetingConstraints} of {results.results.summary.totalOptionsEvaluated}
                 </div>
-                {results.results.summary.top_recommendation && (
+                {results.results.summary.topRecommendation && (
                   <div className="insight-item">
-                    <strong>Top Recommendation:</strong> {results.results.ranked_options.find(opt => opt.option_id === results.results.summary.top_recommendation.option_id)?.name}
+                    <strong>Top Recommendation:</strong> {results.results.rankedOptions.find(opt => opt.optionId === results.results.summary.topRecommendation.optionId)?.name}
                     <br />
-                    <em>Confidence: {Math.round(results.results.summary.top_recommendation.confidence * 100)}%</em>
+                    <em>Confidence: {Math.round(results.results.summary.topRecommendation.confidence * 100)}%</em>
                     <br />
-                    <span className="reasoning">{results.results.summary.top_recommendation.reasoning}</span>
+                    <span className="reasoning">{results.results.summary.topRecommendation.reasoning}</span>
                   </div>
                 )}
               </div>
