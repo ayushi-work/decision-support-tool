@@ -2,7 +2,7 @@
 
 A web-based application for making informed technical decisions by comparing multiple options based on user-defined constraints and weighted priorities. Unlike simple recommendation engines, this tool provides transparent, explainable analysis that helps teams understand trade-offs and make confident choices.
 
-## 🎯 What This Tool Does
+## What This Tool Does
 
 The Decision Support Tool helps you systematically evaluate and compare technical alternatives (databases, cloud services, frameworks, APIs, etc.) by:
 
@@ -20,7 +20,7 @@ Choosing between PostgreSQL and DynamoDB for a high-traffic application:
 **Output**: DynamoDB wins (87.5/100) due to exceptional latency (1ms) and scalability, despite higher cost
 **Insight**: "Best for speed-critical applications where query flexibility can be sacrificed"
 
-## 🤔 Decision Support vs Recommendations
+## Decision Support vs Recommendations
 
 | **Traditional Recommendations** | **Decision Support** |
 |--------------------------------|---------------------|
@@ -37,7 +37,7 @@ Choosing between PostgreSQL and DynamoDB for a high-traffic application:
 - Make **defensible** choices in team discussions
 - Learn from the analysis process
 
-## 🚀 Features
+## Features
 
 - **Multi-Criteria Analysis**: Compare options across multiple dimensions
 - **Flexible Constraints**: Set hard requirements (budget, performance, compliance)
@@ -47,7 +47,7 @@ Choosing between PostgreSQL and DynamoDB for a high-traffic application:
 - **Side-by-Side Comparison**: Visual comparison interface for easy analysis
 - **Production-Ready API**: Clean, modular backend with comprehensive validation
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Frontend (Next.js)     Backend API           Analysis Engine
@@ -193,7 +193,7 @@ Frontend (Next.js)     Backend API           Analysis Engine
 }
 ```
 
-## 🎮 Sample Scenarios
+## Sample Scenarios
 
 The tool includes 5 pre-built comparison scenarios:
 
@@ -209,7 +209,7 @@ Each scenario demonstrates different aspects:
 - Scalability requirements
 - Operational complexity factors
 
-## 🧪 Testing
+## Testing
 
 ### Run Test Suites
 
@@ -230,7 +230,7 @@ node src/test-api.js
 2. **Validation Test**: Try submitting incomplete forms to see error handling
 3. **Edge Cases**: Test with single option, zero weights, missing criteria
 
-## 🔧 Configuration
+## Configuration
 
 ### Supported Constraint Operators
 
@@ -258,7 +258,7 @@ node src/test-api.js
 }
 ```
 
-## 🏢 Use Cases
+## Use Cases
 
 ### Technology Selection
 - **Frontend Frameworks**: React vs Vue vs Angular
@@ -276,7 +276,7 @@ node src/test-api.js
 - **Data Storage**: Object storage vs block storage vs databases
 - **Integration Patterns**: REST vs GraphQL vs message queues
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -291,7 +291,7 @@ node src/test-api.js
 - **Clear Documentation**: Update README and API docs
 - **Error Handling**: Provide helpful error messages
 
-## 📝 API Documentation
+## API Documentation
 
 ### Request Format
 
@@ -372,11 +372,11 @@ interface ComparisonResponse {
 }
 ```
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Support
+## Support
 
 - **Documentation**: See [API_EXAMPLES.md](API_EXAMPLES.md) for detailed examples
 - **Issues**: Report bugs and request features via GitHub Issues
